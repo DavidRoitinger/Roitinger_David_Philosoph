@@ -4,18 +4,15 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Ork implements Runnable{
     private String name;
-    private int leftDaggerId;
-    private int rightDaggerId;
     private Table table;
     private boolean rightDagger = false;
     private boolean leftDagger = false;
     private ReentrantLock rightLock;
     private ReentrantLock leftLock;
 
-    public Ork(String name, int leftDaggerId, int rightDaggerId, Table table, ReentrantLock rightLock, ReentrantLock leftLock) {
+    public Ork(String name, Table table, ReentrantLock rightLock, ReentrantLock leftLock) {
         this.name = name;
-        this.leftDaggerId = leftDaggerId;
-        this.rightDaggerId = rightDaggerId;
+
         this.table = table;
         this.rightLock = rightLock;
         this.leftLock = leftLock;
